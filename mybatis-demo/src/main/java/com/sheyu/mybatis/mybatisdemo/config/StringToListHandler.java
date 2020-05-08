@@ -44,7 +44,7 @@ public class StringToListHandler  extends BaseTypeHandler<List<Integer>> {
 
 
     /**
-     * Integer数组转String
+     * Integer列表转String
      * 注：使用提前设定好的分隔符分割数组的每一项
      */
     private static String arrayToString(List<Integer> array) {
@@ -62,7 +62,7 @@ public class StringToListHandler  extends BaseTypeHandler<List<Integer>> {
     }
 
     /**
-     * 从String转Integer数组
+     * 从String转Integer列表
      * 注：String是用分隔符分割的，使用String.split方法可以分解为数组
      */
     private static List<Integer> stringToArray(String str) {
