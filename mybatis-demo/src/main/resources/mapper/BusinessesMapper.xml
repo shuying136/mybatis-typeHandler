@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sheyu.mybatis.mybatisdemo.mapper.BusinessesMapper">
+
+    <resultMap id="businessesMap" type="com.sheyu.mybatis.mybatisdemo.beans.Businesses">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="accessIds" column="access_ids"
+                typeHandler="com.sheyu.mybatis.mybatisdemo.config.StringToListHandler"/>
+        <result property="createTime" column="create_time"/>
+    </resultMap>
+
+    <select id="findById" parameterType="map" resultMap="businessesMap">
+        SELECT id, name, access_ids, create_time
+        FROM businesses
+        WHERE id = #{id}
+    </select>
+
+</mapper>
